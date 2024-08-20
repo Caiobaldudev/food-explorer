@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, StyledLink } from "./style";
-import LogoSvg from "../../components/LogoSvg/LogoSvg";
+import CustomLogoSvg from "../../components/LogoSvg/LogoSvg";
 import { useAuth } from "../../hooks/auth";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
@@ -14,7 +14,12 @@ const SignIn = () => {
   }
   return (
     <Container>
-      <LogoSvg />
+      <CustomLogoSvg
+      imgColor="#065E7C" 
+      tColor="#f9f9f9"    
+      width="324px"        
+      height="48px"
+      />
       <Form>
         <h1>Faça login</h1>
         <Input
