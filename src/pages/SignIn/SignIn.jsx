@@ -4,7 +4,6 @@ import LogoSvg from "../../components/LogoSvg/LogoSvg";
 import { useAuth } from "../../hooks/auth";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
-import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
