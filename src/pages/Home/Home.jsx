@@ -1,8 +1,13 @@
 import React from "react";
 import { Section } from "./style";
+import BurguersCard from "../../components/BurguersCard/BurguersCard";
 
 const Home = () => {
-  return <Section>{/* <h1>Aqui é a HOME</h1> */}</Section>;
+  return (
+    <Section>
+      <BurguersCard/>
+    </Section>
+  );
 };
 
 export default Home;
