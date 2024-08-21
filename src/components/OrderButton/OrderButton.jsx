@@ -1,4 +1,6 @@
 import React from "react";
+//navigate
+import { useNavigate } from "react-router-dom";
 // auth
 import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
@@ -8,14 +10,21 @@ import { PiReceipt } from "react-icons/pi";
 
 const OrderButton = ({ height, width, ...props }) => {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
-  const isAdmin = () => {
-    return user.role === USER_ROLE.ADMIN;
+  const isAdmin = user.role === USER_ROLE.ADMIN;
+
+  const handleNewDishClick = () => {
+    navigate("/dishes/");
   };
 
   return (
-    <OButton height={height} width={width}>
-      {isAdmin() ? (
+    <OButton
+      height={height}
+      width={width}
+      onClick={isAdmin ? handleNewDishClick : null}
+    >
+      {isAdmin ? (
         <p>Novo prato</p>
       ) : (
         <>
