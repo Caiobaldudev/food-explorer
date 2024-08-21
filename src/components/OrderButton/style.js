@@ -12,7 +12,6 @@ export const OButton = styled.button`
     font-family: ${({ theme }) => theme.FONTS.Primary};
     font-weight: 400;
   }
-
   > svg {
     margin-right: 0.8rem;
     font-size: 2.6rem;
