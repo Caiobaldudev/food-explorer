@@ -5,7 +5,8 @@ import { useAuth } from "../../hooks/auth";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 
-const SignIn = () => {
+const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn } = useAuth();
@@ -14,17 +15,24 @@ const SignIn = () => {
   }
   return (
     <Container>
-      <div className="logoWrap">
-
       <CustomLogoSvg
       imgColor="#065E7C" 
       tColor="#f9f9f9"    
       width="324px"        
       height="48px"
       />
-      </div>
       <Form>
-        <h1>Faça login</h1>
+        <h1>Crie sua conta</h1>
+        <Input
+          id="name"
+          type="text"
+          label="Name"
+          value={name}
+          setValue={setName}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Exemplo: Maria da Silva"
+          required
+        />
         <Input
           id="email"
           type="text"
@@ -46,10 +54,10 @@ const SignIn = () => {
           required
         />
         <Button title="Entrar" height="4.8rem" onClick={handleSignIn} />
-        <StyledLink to="/signup">Criar uma conta</StyledLink>
+        <StyledLink to="/">Já tenho uma conta</StyledLink>
       </Form>
     </Container>
   );
 };
 
-export default SignIn;
+export default SignUp;
