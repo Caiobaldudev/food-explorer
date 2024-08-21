@@ -4,22 +4,44 @@ import CustomLogoSvg from "../../components/LogoSvg/LogoSvg";
 import { useAuth } from "../../hooks/auth";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
+
+import { api } from "../../services/api.js";
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn } = useAuth();
-  function handleSignIn() {
-    signIn({ email, password });
+
+  const navigate = useNavigate();
+
+  async function handleSignUp() {
+    if (!name || !email || !password) {
+      return alert("Preencha todos os campos!");
+    }
+
+    await api
+      .post("/users", { name, email, password })
+      .then(() => {
+        alert("Usuário Cadastrado com sucesso!");
+        navigate("/");
+      })
+      .catch((error) => {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert("Não foi possível cadastrar");
+        }
+      });
   }
+
   return (
     <Container>
       <CustomLogoSvg
-      imgColor="#065E7C" 
-      tColor="#f9f9f9"    
-      width="324px"        
-      height="48px"
+        imgColor="#065E7C"
+        tColor="#f9f9f9"
+        width="324px"
+        height="48px"
       />
       <Form>
         <h1>Crie sua conta</h1>
@@ -53,7 +75,7 @@ const SignUp = () => {
           placeholder="No mínimo 6 caracteres"
           required
         />
-        <Button title="Entrar" height="4.8rem" onClick={handleSignIn} />
+        <Button title="Criar conta" height="4.8rem" onClick={handleSignUp} />
         <StyledLink to="/">Já tenho uma conta</StyledLink>
       </Form>
     </Container>
