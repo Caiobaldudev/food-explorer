@@ -1,13 +1,17 @@
-import React from "react";
-import { Section } from "./style";
+import React, { useState, useEffect } from "react";
 import BurguersCard from "../../components/BurguersCard/BurguersCard";
+import { EmblaCarousel } from "../../components/Slide/EmblaCarousel";
+import { Container } from "./style";
 
-const Home = () => {
+export function Home() {
+
   return (
-    <Section>
-      <BurguersCard/>
-    </Section>
-  );
-};
+    <Container>
+      <BurguersCard />
+      <EmblaCarousel title="Refeições" />
+      <EmblaCarousel title="Sobremesas" />
+      <EmblaCarousel title="Bebidas" />
 
-export default Home;
+    </Container>
+  );
+}
