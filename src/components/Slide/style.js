@@ -101,17 +101,16 @@ export const Container = styled.div`
     }
 
     .embla {
-    --slide-spacing: 1.6rem;
-    --slide-size: 21rem;
-  }
-
-
+      --slide-spacing: 1.6rem;
+      --slide-size: 21rem;
+    }
 
     .embla__container {
       backface-visibility: hidden;
-    display: flex;
-    touch-action: pan-y pinch-zoom;
-    margin-left: calc(var(--slide-spacing) * -1.5);
+      display: flex;
+      gap: 1.6rem;
+      touch-action: pan-y pinch-zoom;
+      margin-left: calc(var(--slide-spacing) * -1.5);
       margin-bottom: 2.5rem;
     }
 
