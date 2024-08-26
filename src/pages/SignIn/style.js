@@ -19,6 +19,32 @@ export const Container = styled.div`
       margin: 0 auto;
     }
   }
+
+  .animeLeft {
+    transform: translateX(-20px);
+    opacity: 0;
+    animation: animeLeft 2s forwards;
+  }
+
+  @keyframes animeLeft {
+    to {
+      transform: initial;
+      opacity: initial;
+    }
+  }
+
+  .animeRight {
+    transform: translateX(20px);
+    opacity: 0;
+    animation: animeRight 2s forwards;
+  }
+
+  @keyframes animeRight {
+    to {
+      transform: initial;
+      opacity: 1;
+    }
+  }
 `;
 
 export const Form = styled.form`

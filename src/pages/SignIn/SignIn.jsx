@@ -14,7 +14,7 @@ const SignIn = () => {
   }
   return (
     <Container>
-      <div className="logoWrap">
+      <div className="logoWrap animeLeft">
 
       <CustomLogoSvg
       imgColor="#065E7C" 
@@ -23,7 +23,7 @@ const SignIn = () => {
       height="48px"
       />
       </div>
-      <Form>
+      <Form className="animeRight">
         <h1>Faça login</h1>
         <Input
           id="email"
