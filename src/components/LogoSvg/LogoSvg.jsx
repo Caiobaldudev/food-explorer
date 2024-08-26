@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const StyledSVG = styled.svg`
   width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || 'auto'};
+  @media (max-width: 768px) { 
+    width: 278px;
+    height: 44px;
+  }
 `;
 
 const CustomLogoSvg = ({imgColor = "#065E7C", tColor, width, height}) => {
