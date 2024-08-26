@@ -65,12 +65,12 @@ export function Hamburguer({ setMenuOpen, isOpen = false }) {
             />
           </label>
           <div className="menu__options">
-            {isAdmin ? (
+            {isAdmin() ? (
               <button onClick={handleNewDishClick}>
                 Novo prato <div className="line"></div>
               </button>
             ) : (
-              ""
+              " "
             )}
             <button onClick={handleSignOut}>Sair</button>
           </div>
