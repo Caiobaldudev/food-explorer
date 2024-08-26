@@ -4,6 +4,16 @@ import styled from "styled-components";
 const StyledSVG = styled.svg`
   width: ${({ width }) => width || "100%"};
   height: ${({ height }) => height || "auto"};
+  
+  @media (max-width: 768px) {
+    width: 224px;
+    height: 44px;
+  }
+
+  @media (max-width: 600px) {
+    width: 128px;
+    height: 25px;
+  }
 `;
 
 const AdminLogoSvg = ({ imgColor = "#065E7C", tColor, width, height }) => {

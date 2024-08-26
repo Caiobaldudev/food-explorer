@@ -1,23 +1,19 @@
 import styled from "styled-components";
 
-export const OButton = styled.button`
-  width: ${({ width }) => width || "100%"};
-  height: ${({ height }) => height || "auto"};
-  color: ${({ theme }) => theme.COLORS.LIGHT_100};
+export const Container = styled.button`
+  padding: 1.2rem 4.6rem;
   background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+  border: none;
   display: flex;
+  color: ${({ theme }) => theme.COLORS.LIGHT_100};
   align-items: center;
-  justify-content: center;
-  p {
-    font-family: ${({ theme }) => theme.FONTS.Primary};
-    font-weight: 400;
-  }
+
   > svg {
     margin-right: 0.8rem;
     font-size: 2.6rem;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;

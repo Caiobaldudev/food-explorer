@@ -1,23 +1,29 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StyledSVG = styled.svg`
-  width: ${({ width }) => width || '100%'};
-  height: ${({ height }) => height || 'auto'};
-  @media (max-width: 768px) { 
-    width: 278px;
+  width: ${({ width }) => width || "100%"};
+  height: ${({ height }) => height || "auto"};
+
+  @media (max-width: 768px) {
+    width: 224px;
     height: 44px;
+  }
+
+  @media (max-width: 600px) {
+    width: 128px;
+    height: 25px;
   }
 `;
 
-const CustomLogoSvg = ({imgColor = "#065E7C", tColor, width, height}) => {
+const CustomLogoSvg = ({ imgColor = "#065E7C", tColor, width, height }) => {
   return (
     <StyledSVG
-    width={width}
-    height={height}
-    viewBox="0 0 197 31"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 197 31"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_5_2895)">
         <path
@@ -36,7 +42,6 @@ const CustomLogoSvg = ({imgColor = "#065E7C", tColor, width, height}) => {
             height={height}
             fill={tColor}
             transform="translate(0 0.366394)"
-            
           />
         </clipPath>
       </defs>
