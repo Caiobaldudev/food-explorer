@@ -9,6 +9,16 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7.3rem;
+    .logoWrap {
+      margin: 0 auto;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -28,6 +38,15 @@ export const Form = styled.form`
   h1 {
     font-weight: 500;
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    background-color: ${({ theme }) => theme.COLORS.DARK_400};
+    width: 100%;
+    padding: 0 4.7rem;
+    h1 {
+      display: none;
+    }
   }
 `;
 
