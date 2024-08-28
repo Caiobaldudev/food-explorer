@@ -139,7 +139,7 @@ export function CreateDish() {
             <div className="price">
               <label htmlFor="dishPrice">Preço</label>
               <input
-                type="text"
+                type="number"
                 id="dishPrice"
                 placeholder="R$ 00,00"
                 value={dishPrice}

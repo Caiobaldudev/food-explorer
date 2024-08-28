@@ -1,20 +1,22 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 30.4rem;
-  height: 46.2rem;
-  background-color: ${({ theme }) => theme.COLORS.DARK_200};
-  position: relative;
-  display: flex;
-  justify-content: center;
+export const Container = styled.div.attrs(props => ({
+  // Passa apenas as props que você quer para o DOM, mas não a isAdmin
+}))`
+width: 30.4rem;
+height: 46.2rem;
+background-color: ${({ theme }) => theme.COLORS.DARK_200};
+position: relative;
+display: flex;
+justify-content: center;
 
-  .dishDescription {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px black solid;
-    border-radius: 0.8rem;
-  }
+.dishDescription {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px black solid;
+  border-radius: 0.8rem;
+}
 
   > .dishDescription img {
     top: 24px;
@@ -25,7 +27,6 @@ export const Container = styled.div`
 
   > .dishDescription {
     > .dishName {
-      white-space: nowrap;
       padding: 1.5rem;
       font-size: 2.4rem;
       font-weight: 700;
@@ -75,7 +76,7 @@ export const Container = styled.div`
       padding: 1.5rem 2.4rem;
     }
   }
-  //Media query
+
   @media (max-width: 768px) {
     width: 21rem;
     height: 29.2rem;
@@ -89,7 +90,7 @@ export const Container = styled.div`
     .dishDescription img {
       width: 8.8rem;
       height: 8.8rem;
-      margin-top: 2.4rem;
+      margin-top: ${({ isAdmin }) => (isAdmin ? "6.4rem" : "2.4rem")};
     }
 
     > .dishDescription{ 
@@ -126,6 +127,7 @@ export const Container = styled.div`
     }
   }
 `;
+
 
 //botão
 export const FavButton = styled.button`

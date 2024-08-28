@@ -16,6 +16,8 @@ export function DishCard({ dish }) {
 
   const isAdmin = user.role === USER_ROLE.ADMIN;
 
+  
+
   if (!dish) {
     return <p>Dish data is not available.</p>;
   }
@@ -42,7 +44,7 @@ export function DishCard({ dish }) {
           {dish.name || "Nome do prato"} &gt;
         </button>
         <p>{dish.description || "Descrição do prato"}</p>
-        <span className="dishPrice">R$ {dish.price ? dish.price.toFixed(2) : "00,00"}</span>
+        <span className="dishPrice">{dish.price || "00,00"}</span>
         <div className="wrap-order">
           {!isAdmin && (
             <div className="order_varyButtons">
