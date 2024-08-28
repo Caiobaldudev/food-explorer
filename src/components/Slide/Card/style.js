@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  /* margin: 0 auto; */
   width: 30.4rem;
   height: 46.2rem;
   background-color: ${({ theme }) => theme.COLORS.DARK_200};
@@ -26,6 +25,7 @@ export const Container = styled.div`
 
   > .dishDescription {
     > .dishName {
+      white-space: nowrap;
       padding: 1.5rem;
       font-size: 2.4rem;
       font-weight: 700;
@@ -76,7 +76,7 @@ export const Container = styled.div`
     }
   }
   //Media query
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     width: 21rem;
     height: 29.2rem;
 

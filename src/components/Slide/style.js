@@ -90,7 +90,7 @@ export const Container = styled.div`
     height: 95%;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     padding: 0rem 0rem 0rem 2.4rem;
     .embla {
       h1 {
