@@ -110,7 +110,7 @@ export const Container = styled.div`
       display: flex;
       gap: 1.6rem;
       touch-action: pan-y pinch-zoom;
-      margin-left: calc(var(--slide-spacing) * -1.5);
+      margin-left: 0;
       margin-bottom: 2.5rem;
     }
 

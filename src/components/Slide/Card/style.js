@@ -93,6 +93,7 @@ export const Container = styled.div`
     }
 
     > .dishDescription{ 
+      width: 21rem;
       > .dishName {
         padding: 1.2rem;
         font-size: 1.4rem;
