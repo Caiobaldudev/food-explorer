@@ -6,12 +6,13 @@ const BurguersCard = () => {
   return (
     <Container>
       <div className="card">
+        <div className="contentCard"></div>
         <div className="imageCard">
           <img src={hamburger} alt="sweet burger img" />
         </div>
         <div className="textCard">
-        <h1>Sabores inigualáveis</h1>
-        <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+          <h1>Sabores inigualáveis</h1>
+          <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
         </div>
       </div>
     </Container>
