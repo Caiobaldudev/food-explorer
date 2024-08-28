@@ -13,4 +13,17 @@ export const Container = styled.footer`
   p {
     font-size: 1.4rem;
   }
+
+  @media (max-width: 768px) {
+  padding: 3rem 2.8rem;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  left: 0;
+
+  p {
+    white-space: nowrap;
+    font-size: 1rem;
+  }
+  }
 `;

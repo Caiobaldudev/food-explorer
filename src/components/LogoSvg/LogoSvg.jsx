@@ -10,7 +10,7 @@ const StyledSVG = styled.svg`
     height: 44px;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 375px) {
     width: 128px;
     height: 25px;
   }

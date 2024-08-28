@@ -11,7 +11,7 @@ const AppFooter = () => {
         width="186px"
         height="30px"
       />
-      <p>&copy; 2024 - Todos os direitos reservados.</p>
+      <p>&copy; 2023 - Todos os direitos reservados.</p>
     </Container>
   );
 };
