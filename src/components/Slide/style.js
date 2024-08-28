@@ -22,7 +22,6 @@ export const Container = styled.div`
     display: flex;
     gap: 2.7rem;
     touch-action: pan-y pinch-zoom;
-    margin-left: calc(var(--slide-spacing) * -1);
   }
   .embla__slide {
     flex: 0 0 var(--slide-size);
