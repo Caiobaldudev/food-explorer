@@ -23,7 +23,10 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  
+  const handleSignOut = () => {
+    signOut();  
+    navigate("/"); 
+  };
 
   const isAdmin = () => {
     return user.role === USER_ROLE.ADMIN;
@@ -73,7 +76,7 @@ const Header = () => {
           <OrderButton />
         )}
         <Logout>
-          <GoSignOut onClick={signOut} />
+          <GoSignOut onClick={handleSignOut} />
         </Logout>
       </div>
 
