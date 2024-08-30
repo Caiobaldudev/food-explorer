@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100vh;
   section {
-    padding: 4rem 12.3rem 11.6rem 12.3rem;
+    padding: 4rem 12.3rem 4rem 12.3rem;
     > h1 {
       color: ${({ theme }) => theme.COLORS.LIGHT_300};
       padding: 2.4rem 0rem 3.2rem 0rem;
@@ -143,7 +142,7 @@ export const Container = styled.div`
     align-self: flex-end;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     section {
       padding: 1.1rem 3.2rem 2.4rem 3.2rem;
       > h1 {
@@ -219,7 +218,7 @@ export const Button = styled.button`
   &:disabled {
     opacity: 0.5;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
