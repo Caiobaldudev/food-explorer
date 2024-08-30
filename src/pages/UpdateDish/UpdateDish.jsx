@@ -189,7 +189,11 @@ export function EditDish() {
               ></textarea>
             </div>
             <div className="button-container">
-              <Button type="button" className="delete-button" onClick={handleDelete}>
+              <Button
+                type="button"
+                className="delete-button"
+                onClick={handleDelete}
+              >
                 Excluir prato
               </Button>
               <Button type="handleSubmit" onClick={handleSubmit}>
