@@ -28,7 +28,7 @@ export function DishCard({ dish }) {
   }
 
   const handleEditDish = () => {
-    navigate(`/dishes/${dish.id}`);
+    navigate(`/dishes/edit/${dish.id}`);
   };
 
   return (
