@@ -16,7 +16,12 @@ export function DishCard({ dish }) {
 
   const isAdmin = user.role === USER_ROLE.ADMIN;
 
-  
+  const truncateDescription = (description) => {
+    if (description.length > 65) {
+      return description.substring(0, 65) + "..";
+    }
+    return description;
+  };
 
   if (!dish) {
     return <p>Dish data is not available.</p>;
@@ -43,7 +48,7 @@ export function DishCard({ dish }) {
         <button className="dishName" onClick={() => navigate(`/dishes/${dish.id}`)}>
           {dish.name || "Nome do prato"} &gt;
         </button>
-        <p>{dish.description || "Descrição do prato"}</p>
+        <p>{truncateDescription(dish.description || "Descrição do prato")}</p>
         <span className="dishPrice">{dish.price || "00,00"}</span>
         <div className="wrap-order">
           {!isAdmin && (
