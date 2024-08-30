@@ -11,12 +11,14 @@ import { AddButton, RemoveButton } from "./style.js";
 import { useAuth } from "../../hooks/auth.jsx";
 import { USER_ROLE } from "../../utils/roles.js";
 import { api } from "../../services/api.js";
+import { useOrder } from '../../contexts/OrderContext';
 
 export function ShowDish() {
   const { id } = useParams();
   const [dish, setDish] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
+  const { addToOrder } = useOrder();
   const { user } = useAuth();
   const imageUrl = dish?.image_id
     ? `${api.defaults.baseURL}/files/${dish.image_id}`
@@ -49,6 +51,10 @@ export function ShowDish() {
   }
 
   const formattedQuantity = quantity.toString().padStart(2, "0");
+
+  const handleInclude = () => {
+    addToOrder(quantity); 
+  };
 
   return (
     <Container>
@@ -89,7 +95,7 @@ export function ShowDish() {
                   onClick={() => navigate(`/dishes/edit/${dish.id}`)}
                 />
               ) : (
-                <Button title={`incluir · R$ ${dish.price}`} />
+                <Button title={`incluir · R$ ${dish.price}`} onClick={handleInclude} />
               )}
             </div>
           </div>

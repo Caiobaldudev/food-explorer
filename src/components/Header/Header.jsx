@@ -16,16 +16,18 @@ import searchIcon from "../../assets/bloom.svg";
 import AdminLogoSvg from "../AdminLogoSvg/AdminLogoSvg";
 import { PiReceiptBold } from "react-icons/pi";
 import { Hamburguer } from "./Hamburguer/Hamburguer";
+import { useOrder } from "../../contexts/OrderContext";
 
 const Header = () => {
   const { signOut, user } = useAuth();
   const [search, setSearch] = React.useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const { orderCount } = useOrder();
 
   const handleSignOut = () => {
-    signOut();  
-    navigate("/"); 
+    signOut();
+    navigate("/");
   };
 
   const isAdmin = () => {
@@ -73,7 +75,7 @@ const Header = () => {
         {isAdmin() ? (
           <button onClick={handleNewDishClick}>Novo Prato</button>
         ) : (
-          <OrderButton />
+          <OrderButton count={orderCount} />
         )}
         <Logout>
           <GoSignOut onClick={handleSignOut} />
@@ -84,7 +86,7 @@ const Header = () => {
         <span></span>
       ) : (
         <MobileReceipt>
-          <span>0</span>
+          <span>{orderCount}</span>
           <PiReceiptBold />
         </MobileReceipt>
       )}

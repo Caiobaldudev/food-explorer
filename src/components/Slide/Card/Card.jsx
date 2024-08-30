@@ -9,11 +9,13 @@ import { useAuth } from "../../../hooks/auth";
 import { USER_ROLE } from "../../../utils/roles";
 import defaultImgDish from "../../../assets/default.svg"
 import {api} from '../../../services/api.js';
+import { useOrder } from '../../../contexts/OrderContext';
 
 export function DishCard({ dish }) {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [quantity, setQuantity] = useState(1);
+  const { addToOrder } = useOrder();
   const imageUrl = dish?.image_id
     ? `${api.defaults.baseURL}/files/${dish.image_id}`
     : `${defaultImgDish}`;
@@ -35,6 +37,9 @@ export function DishCard({ dish }) {
     setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
   };
 
+  const handleInclude = () => {
+    addToOrder(quantity); 
+  };
 
   if (!dish) {
     return <p>Dish data is not available.</p>;
@@ -79,7 +84,7 @@ export function DishCard({ dish }) {
           )}
           {!isAdmin && (
             <div className="wrap_button">
-              <Button title="incluir" />
+              <Button title="incluir" onClick={handleInclude}/>
             </div>
           )}
         </div>
