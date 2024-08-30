@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { AddButton, Container, FavButton, RemoveButton } from "./style";
 import { MdFavoriteBorder } from "react-icons/md";
 import { PiPencilSimple } from "react-icons/pi";
@@ -12,7 +13,10 @@ import {api} from '../../../services/api.js';
 export function DishCard({ dish }) {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const imageUrl = `${api.defaults.baseURL}/files/${dish.image_id}`;
+  const [quantity, setQuantity] = useState(1);
+  const imageUrl = dish?.image_id
+    ? `${api.defaults.baseURL}/files/${dish.image_id}`
+    : `${defaultImgDish}`;
 
   const isAdmin = user.role === USER_ROLE.ADMIN;
 
@@ -23,6 +27,15 @@ export function DishCard({ dish }) {
     return description;
   };
 
+  const handleAdd = () => {
+    setQuantity((prevQuantity) => Math.min(prevQuantity + 1, 5));
+  };
+
+  const handleRemove = () => {
+    setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
+  };
+
+
   if (!dish) {
     return <p>Dish data is not available.</p>;
   }
@@ -30,6 +43,8 @@ export function DishCard({ dish }) {
   const handleEditDish = () => {
     navigate(`/dishes/edit/${dish.id}`);
   };
+
+  const formattedQuantity = quantity.toString().padStart(2, "0");
 
   return (
     <Container>
@@ -53,13 +68,13 @@ export function DishCard({ dish }) {
         <div className="wrap-order">
           {!isAdmin && (
             <div className="order_varyButtons">
-              <RemoveButton>
-                <IoIosRemove />
-              </RemoveButton>
-              <span className="quantity">01</span>
-              <AddButton>
-                <IoIosAdd />
-              </AddButton>
+              <RemoveButton onClick={handleRemove} disabled={quantity === 1}>
+                  <IoIosRemove />
+                </RemoveButton>
+                <span className="quantity">{formattedQuantity}</span>
+                <AddButton onClick={handleAdd} disabled={quantity === 5}>
+                  <IoIosAdd />
+                </AddButton>
             </div>
           )}
           {!isAdmin && (
