@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import {Home} from "../pages/Home/Home";
 import { CreateDish } from "../pages/CreateDishes/CreateDishes";
+import { ShowDish } from "../pages/ShowDish/ShowDish";
 
 
 export function AdminRoutes(){
@@ -10,6 +11,7 @@ export function AdminRoutes(){
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="dishes" element={<CreateDish/>}/>
+      <Route path="dishes/:id" element={<ShowDish/>}/>
     </Routes>
   )
 
