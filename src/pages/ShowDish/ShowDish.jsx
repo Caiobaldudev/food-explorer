@@ -37,7 +37,7 @@ export function ShowDish() {
   }, [id]);
 
   const handleAdd = () => {
-    setQuantity((prevQuantity) => Math.min(prevQuantity + 1, 15));
+    setQuantity((prevQuantity) => Math.min(prevQuantity + 1, 5));
   };
 
   const handleRemove = () => {
@@ -73,11 +73,11 @@ export function ShowDish() {
               ""
             ) : (
               <div className="quantityButtons">
-                <RemoveButton onClick={handleRemove} disabled={quantity === 0}>
+                <RemoveButton onClick={handleRemove} disabled={quantity === 1}>
                   <IoIosRemove />
                 </RemoveButton>
                 <span className="quantity">{formattedQuantity}</span>
-                <AddButton onClick={handleAdd} disabled={quantity === 15}>
+                <AddButton onClick={handleAdd} disabled={quantity === 5}>
                   <IoIosAdd />
                 </AddButton>
               </div>
