@@ -9,11 +9,11 @@ export const Container = styled.div`
     inset: 0;
     position: absolute;
     z-index: 9999;
-    transform: translateX(-100%); /* Começa fora da tela */
-    transition: transform 0.3s ease; /* Animação suave */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
 
     &.open {
-      transform: translateX(0); /* Move para dentro da tela */
+      transform: translateX(0);
     }
 
     .header__menu {

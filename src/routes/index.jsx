@@ -24,7 +24,9 @@ const Routes = () => {
 
   return (
     <BrowserRouter>
-      <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      <div
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      >
         {user ? (
           <>
             <Header />

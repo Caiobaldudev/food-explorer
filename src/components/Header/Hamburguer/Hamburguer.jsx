@@ -1,12 +1,17 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Container, MenuMobile } from "./style";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { useAuth } from "../../../hooks/auth";
 import { USER_ROLE } from "../../../utils/roles";
+import { useSearch } from "../../../contexts/SearchContext";
 
 export function Hamburguer({ setMenuOpen, isOpen = false }) {
   const { signOut, user } = useAuth();
   const navigate = useNavigate();
+  const { setSearchTerm } = useSearch(); 
+
+  const [searchInput, setSearchInput] = useState("");
 
   const isAdmin = () => {
     return user.role === USER_ROLE.ADMIN;
@@ -37,11 +42,17 @@ export function Hamburguer({ setMenuOpen, isOpen = false }) {
   };
 
   const handleSignOut = () => {
-    signOut(); 
+    signOut();
     if (location.pathname === "/dishes/") {
-      navigate("/"); 
+      navigate("/");
     }
-    handleMenuOpen(false); 
+    handleMenuOpen(false);
+  };
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    setSearchInput(query);
+    setSearchTerm(query); 
   };
 
   return (
@@ -50,7 +61,7 @@ export function Hamburguer({ setMenuOpen, isOpen = false }) {
         <HiOutlineMenu />
       </MenuMobile>
 
-      <div className={`menu ${isOpen ? 'open' : ''}`}>
+      <div className={`menu ${isOpen ? "open" : ""}`}>
         <div className="header__menu">
           <button onClick={() => handleMenuOpen(false)}>
             <HiOutlineX size={24} />
@@ -62,6 +73,8 @@ export function Hamburguer({ setMenuOpen, isOpen = false }) {
             <input
               type="search"
               placeholder="Busque por pratos ou ingredientes"
+              value={searchInput}
+              onChange={handleSearchChange}
             />
           </label>
           <div className="menu__options">

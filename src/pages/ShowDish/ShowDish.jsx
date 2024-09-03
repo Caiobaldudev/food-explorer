@@ -11,7 +11,7 @@ import { AddButton, RemoveButton } from "./style.js";
 import { useAuth } from "../../hooks/auth.jsx";
 import { USER_ROLE } from "../../utils/roles.js";
 import { api } from "../../services/api.js";
-import { useOrder } from '../../contexts/OrderContext';
+import { useOrder } from "../../contexts/OrderContext";
 
 export function ShowDish() {
   const { id } = useParams();
@@ -53,7 +53,7 @@ export function ShowDish() {
   const formattedQuantity = quantity.toString().padStart(2, "0");
 
   const handleInclude = () => {
-    addToOrder(quantity); 
+    addToOrder(quantity);
   };
 
   return (
@@ -95,7 +95,10 @@ export function ShowDish() {
                   onClick={() => navigate(`/dishes/edit/${dish.id}`)}
                 />
               ) : (
-                <Button title={`incluir · R$ ${dish.price}`} onClick={handleInclude} />
+                <Button
+                  title={`incluir · R$ ${dish.price}`}
+                  onClick={handleInclude}
+                />
               )}
             </div>
           </div>

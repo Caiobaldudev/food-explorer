@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-//estilos
 import { Container, InputWrapper, Logout, MobileReceipt } from "./style";
-// auth
 import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
-// icons
-import { GoSignOut } from "react-icons/go";
-// navigate
 import { Link, useNavigate } from "react-router-dom";
-// components
 import CustomLogoSvg from "../LogoSvg/LogoSvg";
 import Input from "../Input/Input";
 import { OrderButton } from "../OrderButton/OrderButton";
@@ -17,10 +11,12 @@ import AdminLogoSvg from "../AdminLogoSvg/AdminLogoSvg";
 import { PiReceiptBold } from "react-icons/pi";
 import { Hamburguer } from "./Hamburguer/Hamburguer";
 import { useOrder } from "../../contexts/OrderContext";
+import { useSearch } from "../../contexts/SearchContext";
+import { GoSignOut } from "react-icons/go";
 
 const Header = () => {
   const { signOut, user } = useAuth();
-  const [search, setSearch] = React.useState("");
+  const { searchTerm, setSearchTerm, searchResults } = useSearch();
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { orderCount } = useOrder();
@@ -65,9 +61,8 @@ const Header = () => {
         <Input
           id="search"
           type="search"
-          value={search}
-          setValue={setSearch}
-          onChange={(e) => setSearch(e.target.value)}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Busque por pratos ou ingredientes"
         />
       </InputWrapper>
@@ -81,7 +76,6 @@ const Header = () => {
           <GoSignOut onClick={handleSignOut} />
         </Logout>
       </div>
-
       {isAdmin() ? (
         <span></span>
       ) : (

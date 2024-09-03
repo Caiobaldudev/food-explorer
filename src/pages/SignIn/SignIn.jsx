@@ -15,13 +15,12 @@ const SignIn = () => {
   return (
     <Container>
       <div className="logoWrap animeLeft">
-
-      <CustomLogoSvg
-      imgColor="#065E7C" 
-      tColor="#f9f9f9"    
-      width="324px"        
-      height="48px"
-      />
+        <CustomLogoSvg
+          imgColor="#065E7C"
+          tColor="#f9f9f9"
+          width="324px"
+          height="48px"
+        />
       </div>
       <Form className="animeRight">
         <h1>Faça login</h1>

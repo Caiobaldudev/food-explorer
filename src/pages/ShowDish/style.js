@@ -53,10 +53,10 @@ export const Section = styled.section`
   }
 
   .dish__ingredients {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
 
   .wrapOrderSDish {
     margin-top: 2.4rem;

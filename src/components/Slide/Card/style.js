@@ -1,22 +1,20 @@
 import styled from "styled-components";
 
-export const Container = styled.div.attrs(props => ({
-  // Passa apenas as props que você quer para o DOM, mas não a isAdmin
-}))`
-width: 30.4rem;
-height: 46.2rem;
-background-color: ${({ theme }) => theme.COLORS.DARK_200};
-position: relative;
-display: flex;
-justify-content: center;
-
-.dishDescription {
+export const Container = styled.div.attrs((props) => ({}))`
+  width: 30.4rem;
+  height: 46.2rem;
+  background-color: ${({ theme }) => theme.COLORS.DARK_200};
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px black solid;
-  border-radius: 0.8rem;
-}
+  justify-content: center;
+
+  .dishDescription {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px black solid;
+    border-radius: 0.8rem;
+  }
 
   > .dishDescription img {
     top: 24px;
@@ -93,7 +91,7 @@ justify-content: center;
       margin-top: ${({ isAdmin }) => (isAdmin ? "6.4rem" : "2.4rem")};
     }
 
-    > .dishDescription{ 
+    > .dishDescription {
       width: 21rem;
       > .dishName {
         padding: 1.2rem;
@@ -127,7 +125,6 @@ justify-content: center;
     }
   }
 `;
-
 
 //botão
 export const FavButton = styled.button`

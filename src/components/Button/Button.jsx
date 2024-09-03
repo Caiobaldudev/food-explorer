@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 import { ButtonC } from "./style";
 
 export const Button = ({ title, height, width, ...props }) => {
   function handleClick(event) {
-    event.preventDefault()
+    event.preventDefault();
     if (props.onClick) {
       props.onClick();
     }
@@ -13,6 +13,6 @@ export const Button = ({ title, height, width, ...props }) => {
       {title}
     </ButtonC>
   );
-}
+};
 
-export default Button
+export default Button;

@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
   display: flex;
   align-items: center;
   width: fit-content;
-  
-  background-color: ${({theme, $isNew}) => $isNew ? "transparent" : theme.COLORS.LIGHT_600};
 
-  border: ${({theme, $isNew}) => $isNew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
+  background-color: ${({ theme, $isNew }) =>
+    $isNew ? "transparent" : theme.COLORS.LIGHT_600};
 
-  border-radius: .8rem;
-  padding: .8rem 1.6rem;
+  border: ${({ theme, $isNew }) =>
+    $isNew ? `1px dashed ${theme.COLORS.LIGHT_500}` : "none"};
+
+  border-radius: 0.8rem;
+  padding: 0.8rem 1.6rem;
 
   > button {
     display: flex;
@@ -19,7 +21,8 @@ export const Container = styled.div `
     border: none;
     background: transparent;
     > svg {
-      color: ${({theme, $isNew}) => $isNew ? theme.COLORS.LIGHT_500 : theme.COLORS.LIGHT_100};
+      color: ${({ theme, $isNew }) =>
+        $isNew ? theme.COLORS.LIGHT_500 : theme.COLORS.LIGHT_100};
     }
   }
 
@@ -32,12 +35,12 @@ export const Container = styled.div `
     font-family: ${({ theme }) => theme.FONTS.Secondary};
     font-size: 1.6rem;
     line-height: 100%;
-    color: ${({theme, $isNew}) => $isNew ? theme.COLORS.LIGHT_500 : theme.COLORS.LIGHT_100};
+    color: ${({ theme, $isNew }) =>
+      $isNew ? theme.COLORS.LIGHT_500 : theme.COLORS.LIGHT_100};
     background: transparent;
     border: none;
     &::placeholder {
-      color: ${({theme}) => theme.COLORS.LIGHT_500};
+      color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
   }
-
 `;
