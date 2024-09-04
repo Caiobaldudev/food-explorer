@@ -16,7 +16,8 @@ export const Container = styled.div`
   }
 
   .imageCard {
-    transform: translateY(-18%) translateX(-10%);
+    transform: translateY(-15.5%) translateX(-10%);
+    height: 42rem;
     position: absolute;
     overflow: hidden;
   }
@@ -50,10 +51,10 @@ export const Container = styled.div`
     }
 
     .imageCard {
-      transform: translateY(-0%) translateX(-16%);
+      transform: translateY(34.2%) translateX(-16%);
       img {
         width: 19.1rem;
-        height: 12rem;
+        height: 13rem;
       }
     }
 
