@@ -35,6 +35,9 @@ export function CreateDish() {
     if (!dishName || !dishPrice) {
       return alert("Por favor, preencha os campos Nome e Preço!");
     }
+    if (!dishCategory || dishCategory === "") {
+      return alert("Selecione uma categoria válida para o prato!");
+    }
     if (ingredients.length === 0) {
       return alert("Adicione pelo menos um ingrediente ao prato!");
     }
@@ -67,7 +70,6 @@ export function CreateDish() {
   }
 
   function handleSetImage(e) {
-    console.log("Escolheu imagem");
     const file = e.target.files[0];
     setDishImage(file);
   }
