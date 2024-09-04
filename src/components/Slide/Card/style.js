@@ -31,6 +31,7 @@ export const Container = styled.div.attrs((props) => ({}))`
       width: 27rem;
       font-family: ${({ theme }) => theme.FONTS.Primary};
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
+      white-space: nowrap;
     }
   }
 
