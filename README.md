@@ -35,6 +35,9 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 - Vite: Ferramenta de construção rápida para projetos React.
 - ESLint: Ferramenta de linting para garantir a qualidade do código.
 
+## 🔨 Deploy
+
+[Deploy do Food Explorer Site](https://food-explo.netlify.app)
 
 ## 💡 Possíveis Melhorias que serão atualizadas
 
