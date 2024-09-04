@@ -14,7 +14,7 @@ export const Container = styled.div`
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 7.3rem;
+    gap: 5rem;
     .logoWrap {
       margin: 0 auto;
     }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, InputWrapper, Logout, MobileReceipt } from "./style";
 import { USER_ROLE } from "../../utils/roles";
 import { useAuth } from "../../hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import CustomLogoSvg from "../LogoSvg/LogoSvg";
 import Input from "../Input/Input";
 import { OrderButton } from "../OrderButton/OrderButton";
@@ -21,6 +21,8 @@ const Header = () => {
   const navigate = useNavigate();
   const { orderCount } = useOrder();
 
+  const location = useLocation();
+
   const handleSignOut = () => {
     signOut();
     navigate("/");
@@ -33,6 +35,8 @@ const Header = () => {
   const handleNewDishClick = () => {
     navigate("/dishes/");
   };
+
+  const showSearchInput = location.pathname === "/"
 
   return (
     <Container>
@@ -56,16 +60,18 @@ const Header = () => {
           />
         </Link>
       )}
-      <InputWrapper>
-        <img src={searchIcon} alt="Search Icon" />
-        <Input
-          id="search"
-          type="search"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Busque por pratos ou ingredientes"
-        />
-      </InputWrapper>
+     {showSearchInput && (  // Condição para exibir o input somente na rota "/Home"
+        <InputWrapper>
+          <img src={searchIcon} alt="Search Icon" />
+          <Input
+            id="search"
+            type="search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="Busque por pratos ou ingredientes"
+          />
+        </InputWrapper>
+      )}
       <div className="final">
         {isAdmin() ? (
           <button onClick={handleNewDishClick}>Novo Prato</button>

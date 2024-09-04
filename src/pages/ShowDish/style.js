@@ -114,6 +114,19 @@ export const Section = styled.section`
       font-size: 2.2rem;
     }
   }
+
+  @media (max-width: 500px) {
+    .left__content {
+      > img {
+        width: 25rem;
+        height: 25rem;
+      }
+    }
+
+    .dish__ingredients {
+      gap: 1.5rem;
+    }
+  }
 `;
 
 export const RemoveButton = styled.button`

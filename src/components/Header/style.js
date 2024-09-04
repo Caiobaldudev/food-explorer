@@ -8,6 +8,8 @@ export const Container = styled.div`
   gap: 3.2rem;
   padding: 2.4rem 12.3rem;
 
+  justify-content: ${({ hasSearchInput }) => (hasSearchInput ? "space-around" : "space-between")};
+
   #search {
     padding: 1.6rem 13.7rem;
     padding-right: 0;

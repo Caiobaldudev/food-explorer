@@ -14,7 +14,7 @@ export const Container = styled.div`
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 7.3rem;
+    gap: 5rem;
     .logoWrap {
       margin: 0 auto;
     }
@@ -70,6 +70,7 @@ export const Form = styled.form`
     background-color: ${({ theme }) => theme.COLORS.DARK_400};
     width: 100%;
     padding: 0 4.7rem;
+    gap: 3.2rem;
     h1 {
       display: none;
     }

@@ -45,14 +45,12 @@ export const Container = styled.div`
     & input {
       margin-top: 3.6rem;
       width: 100%;
-      padding: 1.6rem 0rem 1.6rem 5.2rem;
-      background: url(../src/assets/VectorSearch.svg) no-repeat;
-      background-position: 16px 50%;
+      padding: 1.6rem 0rem 1.6rem 1rem;
       font-size: 1.6rem;
       background-color: ${({ theme }) => theme.COLORS.DARK_900};
       color: ${({ theme }) => theme.COLORS.LIGHT_100};
       text-align: center;
-      margin-bottom: 4.6rem;
+      margin-bottom: 3.6rem;
     }
 
     .menu__options {

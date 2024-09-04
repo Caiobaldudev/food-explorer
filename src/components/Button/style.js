@@ -11,4 +11,8 @@ export const ButtonC = styled.button`
   &:disabled {
     opacity: 0.5;
   }
+
+  @media (max-width: 500px) {
+    white-space: nowrap;
+  }
 `;

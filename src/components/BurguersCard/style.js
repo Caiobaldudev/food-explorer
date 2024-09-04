@@ -78,4 +78,39 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 400px) {
+    margin-bottom: 2rem;
+    .card {
+      gap: 2rem;
+      margin: 4.4rem 1.6rem 6.2rem 3.6rem;
+
+      justify-content: space-between;
+    }
+
+    .contentCard {
+      width: 12rem;
+    }
+
+    .imageCard {
+      transform: translateY(34.2%) translateX(-16%);
+      img {
+        width: 19rem;
+        height: 13rem;
+      }
+    }
+
+    .textCard {
+      h1 {
+        white-space: nowrap;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      p {
+        text-align: left;
+        font-size: .9rem;
+      }
+    }
+  }
 `;

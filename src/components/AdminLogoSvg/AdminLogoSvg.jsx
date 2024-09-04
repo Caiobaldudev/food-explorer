@@ -10,9 +10,9 @@ const StyledSVG = styled.svg`
     height: 44px;
   }
 
-  @media (max-width: 600px) {
-    width: 128px;
-    height: 25px;
+  @media (max-width: 500px) {
+    width: 180px;
+    height: 30px;
   }
 `;
 
