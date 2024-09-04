@@ -1,4 +1,5 @@
-![Thumbnail](https://github.com/user-attachments/assets/5f5b4673-8e7c-48e8-a5fd-413c66f15ad8)
+![Capafood](https://github.com/user-attachments/assets/0b53922c-eed0-4664-af04-ce94e75b00ee)
+
 
 # 🚀 Food Explorer Frontend
 
